@@ -39,7 +39,7 @@ namespace BookClub_konzol
         private static void befizetesek()
         {
             //-- Az egyes tagok befizetései
-            foreach (Tag item in tagok)
+            foreach (Tag item in tagok.OrderBy(a => a.Nev))
             {
                 int osszeg = item.befizetes.Sum(a => a.Osszeg);
                 Console.WriteLine($"\t{item.Nev}:\t{osszeg.ToString("#,##0")} Ft");
